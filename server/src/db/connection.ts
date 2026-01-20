@@ -3,7 +3,7 @@ import { MongoClient, Db, Collection } from 'mongodb';
 let client: MongoClient | null = null;
 let db: Db | null = null;
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/amep';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://vishalmejari:Vishal02228637108@cluster0.5fdpl.mongodb.net/GyanSetu?retryWrites=true&w=majority&appName=Cluster0';
 
 export async function connectDB(): Promise<Db> {
     if (db) return db;
