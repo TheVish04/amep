@@ -1,0 +1,27 @@
+{
+  "name": "amep",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "server",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "bun run --cwd server dev",
+    "dev:student": "bun run --cwd apps/student dev",
+    "dev:teacher": "bun run --cwd apps/teacher dev",
+    "dev:admin": "bun run --cwd apps/admin dev",
+    "dev:portal": "bun run --cwd apps/portal dev",
+    "dev:all": "concurrently \"bun run dev\" \"bun run dev:student\" \"bun run dev:teacher\" \"bun run dev:admin\" \"bun run dev:portal\"",
+    "build": "bun run build:shared && bun run build:apps",
+    "build:shared": "bun run --cwd shared build",
+    "build:apps": "concurrently \"bun run --cwd apps/student build\" \"bun run --cwd apps/teacher build\" \"bun run --cwd apps/admin build\"",
+    "typecheck": "tsc --noEmit",
+    "seed": "bun run --cwd server seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}

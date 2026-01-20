@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #f8fafc;
+    background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Confidence score glow */
+.confidence-glow {
+    box-shadow: 0 0 100px rgba(99, 102, 241, 0.3);
+}
+
+/* Animate pulse */
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 100px rgba(99, 102, 241, 0.5);
+    }
+}
+
+.animate-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}

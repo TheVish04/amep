@@ -1,0 +1,7 @@
+[install]
+# Bun's default behavior
+auto = true
+
+[run]
+# Enable hot reloading
+hot = true
