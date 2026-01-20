@@ -4,6 +4,14 @@ import clsx from 'clsx';
 
 type Role = 'student' | 'teacher' | 'admin';
 
+const isLocal = window.location.hostname.includes('localhost');
+
+const URLS = {
+    student: isLocal ? 'http://localhost:5173' : 'https://amep-student.vercel.app',
+    teacher: isLocal ? 'http://localhost:5174' : 'https://amep-teacher.vercel.app',
+    admin: isLocal ? 'http://localhost:5175' : 'https://amep-admin.vercel.app'
+};
+
 const DEMO_USERS = [
     {
         role: 'student' as Role,
@@ -11,7 +19,7 @@ const DEMO_USERS = [
         name: 'Student Demo',
         icon: GraduationCap,
         color: 'from-blue-500 to-cyan-500',
-        redirect: 'http://localhost:5173'
+        redirect: URLS.student
     },
     {
         role: 'teacher' as Role,
@@ -19,7 +27,7 @@ const DEMO_USERS = [
         name: 'Teacher Demo',
         icon: User,
         color: 'from-violet-500 to-purple-500',
-        redirect: 'http://localhost:5174'
+        redirect: URLS.teacher
     },
     {
         role: 'admin' as Role,
@@ -27,7 +35,7 @@ const DEMO_USERS = [
         name: 'Admin Demo',
         icon: Shield,
         color: 'from-emerald-500 to-teal-500',
-        redirect: 'http://localhost:5175'
+        redirect: URLS.admin
     }
 ];
 
